@@ -1,0 +1,6 @@
+(defun non-atom (a)
+  (cond
+    ((atom a) nil)
+    (t t))
+)
+

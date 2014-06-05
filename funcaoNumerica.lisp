@@ -1,0 +1,7 @@
+(defun member? (a l)
+  (cond
+    ((null l) nil)
+    (t (or
+	(eq (first l) a)
+	(member? a (rest l))))))
+

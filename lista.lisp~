@@ -1,0 +1,28 @@
+(defun concatenar(L1 L2)
+  (cond
+    ((null L1) L2)
+    ((null L2) L1)
+    (t
+     (cons (first l1) (concatenar (rest l1) l2)))))
+
+
+
+(concatenar '(a b c) '(d e f g h j))
+
+(defun concatenarInv(L1 L2)
+  (cond
+    ((null L1) L2)
+    ((null L2) L1)
+    (t
+     (cons (first l2) (concatenar (rest l2) l1)))))
+
+(concatenarInv '(a b c) '(d e f g h j))
+
+(defun concatenarl(l)
+	(cond
+		((null l) nil)
+		((atom (first l)) (cons (first l) (concatenarl (rest l))))
+		(t
+			(concatenar (concatenarl (first l)) (concatenarl (rest l))))))
+
+(concatenar1 '((a b) (c) (e f g)))

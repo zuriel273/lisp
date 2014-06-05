@@ -1,0 +1,34 @@
+(defun remove1 (a l)
+  (cond 
+    ((null l) nil)
+    ((atom (first l))
+     (cond
+       ((eq (first l) a) (rest l))
+       (t (cons (first l) (remove1 a (rest l))))))
+    (t 
+	(cons (remove1 a (first l)) (remove1 a (rest l))))))
+
+(defun remove3 (a l)
+  (cond 
+    ((null l) nil)
+    ((atom (first l))
+     (cond
+       ((eq (first l) a) (rest l))
+       (t (cons (first l) (remove1 a (rest l))))))
+    (t 
+	(cons (remove1 a (first l)) (remove1 a (rest l))))))
+
+
+(defun remove2 (a l)
+  (cond 
+    ((null l) nil)
+    ((atom (first l))
+     (cond
+       ((eq (first l) a) (rest l))
+       (t (cons (first l) (remove1 a (rest l))))))
+    (t (or
+	(cons (remove1 a (first l)) (rest l))
+	(cons (first l) (remove1 a (rest l)))
+	))))
+
+(remove1 'a '(w r 3 (2 f (2 c) a) a (2 a f)))

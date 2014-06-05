@@ -1,0 +1,7 @@
+
+(defun addvetor (vec)
+  (cond
+    ((null vec) 0)
+    (t (+ 
+	(first vec) 
+	(addvetor (rest vec))))))

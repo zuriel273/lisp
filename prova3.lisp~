@@ -1,0 +1,5 @@
+(defun multiplica (x)
+  (cond 
+    ((null x) 1)
+    (t(*
+       (first x) (soma(rest x))))))
